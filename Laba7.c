@@ -5,31 +5,28 @@
 #include <math.h>
 #include <locale.h>
 
-int main() 
+int main()
 {
     setlocale(LC_ALL, "Russian");
     int n_months, days;
-    int choice;
-
-    printf("=== Определение названия месяца ===\n");
-    printf("Выберите вариант: ");
-    scanf("%d", &choice);
-
-    printf("Введите количество месяцев (n): ");
+    int variant;
+    printf("=== РћРїСЂРµРґРµР»РµРЅРёРµ РЅР°Р·РІР°РЅРёСЏ РјРµСЃСЏС†Р° ===\n");
+    printf("Р’С‹Р±РµСЂРёС‚Рµ РІР°СЂРёР°РЅС‚: ");
+    scanf("%d", &variant);
+    printf("Р’РІРµРґРёС‚Рµ РєРѕР»РёС‡РµСЃС‚РІРѕ РјРµСЃСЏС†РµРІ: ");
     scanf("%d", &n_months);
 
-    if (choice == 1) 
+    if (variant == 1)
     {
-        days = 3; 
-        printf("Используется условие задачи: 3 дня\n");
+        days = 3;
+        printf("РСЃРїРѕР»СЊР·СѓРµС‚СЃСЏ СѓСЃР»РѕРІРёРµ Р·Р°РґР°С‡Рё: 3 РґРЅСЏ\n");
     }
-    else 
+    else
     {
-        printf("Введите количество дней: ");
+        printf("Р’РІРµРґРёС‚Рµ РєРѕР»РёС‡РµСЃС‚РІРѕ РґРЅРµР№: ");
         scanf("%d", &days);
     }
 
-    
     int start_month = 1;
     int start_year = 2000;
 
@@ -37,57 +34,57 @@ int main()
 
     int final_year = start_year + (all_months - 1) / 12;
     int final_month = all_months % 12;
-    if (final_month == 0) 
+    if (final_month == 0)
     {
         final_month = 12;
     }
 
-    printf("\nРезультат:\n");
-    printf("От 1 января 2000 года прошло %d месяцев и %d дней\n", n_months, days);
-    printf("Этот день приходится на: ");
+    printf("\nР РµР·СѓР»СЊС‚Р°С‚:\n");
+    printf("РћС‚ 1 СЏРЅРІР°СЂСЏ 2000 РіРѕРґР° РїСЂРѕС€Р»Рѕ %d РјРµСЃСЏС†РµРІ Рё %d РґРЅРµР№\n", n_months, days);
+    printf("Р­С‚РѕС‚ РґРµРЅСЊ РїСЂРёС…РѕРґРёС‚СЃСЏ РЅР°: ");
 
-    switch (final_month) 
+    switch (final_month)
     {
     case 1:
-        printf("Январь");
+        printf("РЇРЅРІР°СЂСЊ");
         break;
     case 2:
-        printf("Февраль");
+        printf("Р¤РµРІСЂР°Р»СЊ");
         break;
     case 3:
-        printf("Март");
+        printf("РњР°СЂС‚");
         break;
     case 4:
-        printf("Апрель");
+        printf("РђРїСЂРµР»СЊ");
         break;
     case 5:
-        printf("Май");
+        printf("РњР°Р№");
         break;
     case 6:
-        printf("Июнь");
+        printf("РСЋРЅСЊ");
         break;
     case 7:
-        printf("Июль");
+        printf("РСЋР»СЊ");
         break;
     case 8:
-        printf("Август");
+        printf("РђРІРіСѓСЃС‚");
         break;
     case 9:
-        printf("Сентябрь");
+        printf("РЎРµРЅС‚СЏР±СЂСЊ");
         break;
     case 10:
-        printf("Октябрь");
+        printf("РћРєС‚СЏР±СЂСЊ");
         break;
     case 11:
-        printf("Ноябрь");
+        printf("РќРѕСЏР±СЂСЊ");
         break;
     case 12:
-        printf("Декабрь");
+        printf("Р”РµРєР°Р±СЂСЊ");
         break;
     default:
-        printf("Ошибка определения месяца");
+        printf("РћС€РёР±РєР° РѕРїСЂРµРґРµР»РµРЅРёСЏ РјРµСЃСЏС†Р°");
         break;
     }
-    printf(" %d года\n", final_year);
+    printf(" %d РіРѕРґР°\n", final_year);
     return 0;
 }
